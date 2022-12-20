@@ -113,3 +113,31 @@ const randomLink = links[randomIndex];
 
 var photo = document.querySelector(".photo");
 photo.setAttribute('src', randomLink);
+
+//
+
+const button = document.querySelector('.reload_button');
+
+let buttonClicked = false;
+
+const value = localStorage.getItem('count');
+if (value) {
+  const valueElement = document.querySelector('.counter');
+  valueElement.textContent = value;
+} else {
+  localStorage.setItem('count', 0);
+}
+
+button.addEventListener('click', function() {
+  buttonClicked = true;
+  const valueElement = document.querySelector('.counter');
+  const value = parseInt(valueElement.textContent);
+  valueElement.textContent = value + 1;
+  localStorage.setItem('count', value + 1);
+});
+
+window.addEventListener('beforeunload', function() {
+  if (!buttonClicked) {
+    localStorage.removeItem('count');
+  }
+});
