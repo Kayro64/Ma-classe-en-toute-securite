@@ -96,6 +96,15 @@ const links = [
     "https://cdn.discordapp.com/attachments/534841376609665054/1054446215154122883/lecturePhotoID_93.jpg",
     "https://cdn.discordapp.com/attachments/534841376609665054/1054446215368020058/lecturePhotoID_94.jpg",
     "https://cdn.discordapp.com/attachments/534841376609665054/1054446215607107655/lecturePhotoID_95.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794010117541938/lecturePhotoID_96.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794010331467856/lecturePhotoID_97.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794010536968274/lecturePhotoID_98.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794010750881942/lecturePhotoID_99.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794010985779300/lecturePhotoID_100.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794011191279747/lecturePhotoID_101.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794011409387620/lecturePhotoID_102.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794011640090634/lecturePhotoID_103.jpg",
+    "https://cdn.discordapp.com/attachments/534841376609665054/1054794011845591151/lecturePhotoID_104.jpg"
 
 ];
 
