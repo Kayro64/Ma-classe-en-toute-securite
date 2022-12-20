@@ -1,4 +1,10 @@
   body{
+    background-color: #F3F5F6;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  header{
     background-color: #ffffff;
   }
 
@@ -13,4 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 2.5em
+  }
+
+  h1{
+    text-align: center;
   }
