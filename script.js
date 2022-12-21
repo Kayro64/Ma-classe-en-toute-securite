@@ -141,3 +141,47 @@ window.addEventListener('beforeunload', function() {
     localStorage.removeItem('count');
   }
 });
+
+document.getElementById("styleToggle").addEventListener("change", function() {
+  if (this.checked) {
+    localStorage.setItem("styleToggle", "checked");
+  } else {
+    localStorage.setItem("styleToggle", "unchecked");
+  }
+});
+
+window.addEventListener("load", function() {
+  var currentState = localStorage.getItem("styleToggle");
+  if (currentState == "checked") {
+    document.getElementById("styleToggle").checked = true;
+    document.getElementById("styleSheet").setAttribute("href", "css/style2.css");
+    var reloadb = document.querySelector('.reload');
+    reloadb.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055157344998281247/r2.png')
+    var darklogo = document.querySelector('.logo');
+    darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055213288658571334/logodarkmode.png')
+  }
+});
+
+document.getElementById("styleToggle").addEventListener("change", function() {
+  if (this.checked) {
+    document.getElementById("styleSheet").setAttribute("href", "css/style3.css");
+    var reloadb = document.querySelector('.reload');
+    reloadb.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055157344998281247/r2.png')
+    var darklogo = document.querySelector('.logo');
+    darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055213288658571334/logodarkmode.png')
+  } else {
+    document.getElementById("styleSheet").setAttribute("href", "css/style1.css");
+    var reloadb = document.querySelector('.reload');
+    reloadb.setAttribute('src', 'https://cdn.discordapp.com/attachments/534841376609665054/1054561160646635600/R.png')
+    var darklogo = document.querySelector('.logo');
+    darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055215741122654218/logolightmode.png')
+  }
+});
+
+// Charger l'état du toggle switch depuis le stockage local lorsque la page est chargée
+window.addEventListener("load", function() {
+  var currentStyle = localStorage.getItem("css/style");
+  if (currentStyle == "css/style2") {
+    document.getElementById("styleToggle").checked = true;
+  }
+});
