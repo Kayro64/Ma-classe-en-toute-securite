@@ -141,39 +141,3 @@ window.addEventListener('beforeunload', function() {
     localStorage.removeItem('count');
   }
 });
-
-const express = require('express');
-
-// Créez un tableau d'images que vous souhaitez utiliser dans votre API
-const images = [
-  {
-    id: 0,
-    url: 'https://media.discordapp.net/attachments/534841376609665054/1054446214583697498/lecturePhotoID.jpg'
-  },
-  {
-    id: 1,
-    url: 'https://media.discordapp.net/attachments/534841376609665054/1054439244459937812/lecturePhotoID_1.jpg'
-  },
-  {
-    id: 2,
-    url: 'https://media.discordapp.net/attachments/534841376609665054/1054439244631908444/lecturePhotoID_2.jpg'
-  }
-];
-
-// Créez une fonction pour renvoyer une image aléatoire à partir de votre base de données
-function getRandomImage(images) {
-  const randomIndex = Math.floor(Math.random() * images.length);
-  return images[randomIndex];
-}
-
-// Initialisez le framework Express et créez une route pour votre API
-const app = express();
-app.get('/api/random-image', (req, res) => {
-  const randomImage = getRandomImage(images);
-  res.json(randomImage);
-});
-
-// Démarrez l'écoute des requêtes sur le port 3000
-app.listen(3000, () => {
-  console.log('API listening on port 3000');
-});
