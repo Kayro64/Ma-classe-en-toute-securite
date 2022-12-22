@@ -1,4 +1,4 @@
-if (location.pathname === '' || location.pathname.includes('/index.html') || location.pathname === '/') {
+if (window.location.pathname === '' || window.location.pathname.includes('/index.html') || window.location.pathname === '/') {
 window.onload = function() {
   const counter = document.querySelector('.counter')
   counter.innerHTML = "1"
@@ -128,7 +128,7 @@ const button = document.querySelector('.reload_button');
 
 let buttonClicked = false;
 
-if (location.pathname === '' || location.pathname.includes('/index.html') || location.pathname === '/') {
+if (window.location.pathname === '' || window.location.pathname.includes('/index.html') || window.location.pathname === '/') {
 const value = localStorage.getItem('count');
 if (value) {
   const valueElement = document.querySelector('.counter');
@@ -146,7 +146,7 @@ if (location.pathname.includes("/lovecalculator.html")) {
 
 button.addEventListener('click', function() {
   buttonClicked = true;
-  if (location.pathname === '' || location.pathname.includes('/index.html') || location.pathname === '/') {
+  if (window.location.pathname === '' || window.location.pathname.includes('/index.html') || window.location.pathname === '/') {
   const valueElement = document.querySelector('.counter');
   const value = parseInt(valueElement.textContent);
   valueElement.textContent = value + 1;
