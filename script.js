@@ -1,6 +1,8 @@
+if (location.pathname.includes("/index.html")) {
 window.onload = function() {
   const counter = document.querySelector('.counter')
   counter.innerHTML = "1"
+}
 }
 
 const getRandomUrl = () => {
@@ -116,6 +118,9 @@ const getRandomUrl = () => {
 };
 
 document.querySelector(".photo").src= getRandomUrl();
+if (location.pathname.includes("/lovecalculator.html")) {
+document.querySelector(".photo2").src= getRandomUrl();
+}
 
 //
 
@@ -123,6 +128,7 @@ const button = document.querySelector('.reload_button');
 
 let buttonClicked = false;
 
+if (location.pathname.includes("/index.html")) {
 const value = localStorage.getItem('count');
 if (value) {
   const valueElement = document.querySelector('.counter');
@@ -130,14 +136,32 @@ if (value) {
 } else {
   localStorage.setItem('count', 1);
 }
+}
+
+if (location.pathname.includes("/lovecalculator.html")) {
+  var randomValue = Math.floor(Math.random() * 31) + 70;
+  randomValue += "%";
+  document.querySelector(".counter1").textContent = randomValue
+}
 
 button.addEventListener('click', function() {
   buttonClicked = true;
+  if (location.pathname.includes("/index.html")) {
   const valueElement = document.querySelector('.counter');
   const value = parseInt(valueElement.textContent);
   valueElement.textContent = value + 1;
   localStorage.setItem('count', value + 1);
+  }
+  if (location.pathname.includes("/lovecalculator.html")) {
+    var randomValue = Math.floor(Math.random() * 31) + 70;
+    randomValue += "%";
+    document.querySelector(".counter1").textContent = randomValue
+  }
   document.querySelector(".photo").src= getRandomUrl();
+  if (location.pathname.includes("/lovecalculator.html")) {
+  document.querySelector(".photo2").src= getRandomUrl();
+  }
+
 });
 
 window.addEventListener('beforeunload', function() {
@@ -158,11 +182,17 @@ window.addEventListener("load", function() {
   var currentState = localStorage.getItem("styleToggle");
   if (currentState == "checked") {
     document.getElementById("styleToggle").checked = true;
-    document.getElementById("styleSheet").setAttribute("href", "css/style2.css");
+    document.getElementById("styleSheet").setAttribute("href", "css/style3.css");
     var reloadb = document.querySelector('.reload');
     reloadb.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055157344998281247/r2.png')
     var darklogo = document.querySelector('.logo');
     darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055213288658571334/logodarkmode.png')
+    if (location.pathname.includes("/lovecalculator.html")) {
+    var darkreturn = document.querySelector('.return_img')
+    darkreturn.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055602315224174702/R2white.png')
+    var darklovelogo = document.querySelector('.logo')
+    darklovelogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055613086226194492/MCETAlogodarkmode.png')
+  }
   }
 });
 
@@ -173,19 +203,31 @@ document.getElementById("styleToggle").addEventListener("change", function() {
     reloadb.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055157344998281247/r2.png')
     var darklogo = document.querySelector('.logo');
     darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055213288658571334/logodarkmode.png')
+    if (location.pathname.includes("/lovecalculator.html")) {
+      var darkreturn = document.querySelector('.return_img')
+      darkreturn.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055602315224174702/R2white.png')
+      var darklovelogo = document.querySelector('.logo')
+      darklovelogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055613086226194492/MCETAlogodarkmode.png')
+    }
   } else {
     document.getElementById("styleSheet").setAttribute("href", "css/style1.css");
     var reloadb = document.querySelector('.reload');
     reloadb.setAttribute('src', 'https://cdn.discordapp.com/attachments/534841376609665054/1054561160646635600/R.png')
     var darklogo = document.querySelector('.logo');
     darklogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055215741122654218/logolightmode.png')
+    if (location.pathname.includes("/lovecalculator.html")) {
+      var darkreturn = document.querySelector('.return_img')
+      darkreturn.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055601501243977738/R2.png')
+      var darklovelogo = document.querySelector('.logo')
+      darklovelogo.setAttribute('src', 'https://media.discordapp.net/attachments/534841376609665054/1055611814731337769/MCETAlogolightmode.png')
+    }
   }
 });
 
 // Charger l'état du toggle switch depuis le stockage local lorsque la page est chargée
 window.addEventListener("load", function() {
   var currentStyle = localStorage.getItem("css/style");
-  if (currentStyle == "css/style2") {
+  if (currentStyle == "css/style3") {
     document.getElementById("styleToggle").checked = true;
   }
 });

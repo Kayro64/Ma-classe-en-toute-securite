@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2.5em
+    padding: 2em
   }
 
   .box2{
@@ -27,6 +27,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .box4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5em
+  }
+
+  .box5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em
   }
 
   h1{
@@ -96,4 +110,8 @@
   	-webkit-transition: ease .3s;
   	-moz-transition: ease .3s;
   	-o-transition: ease .3s;
+  }
+
+  .doubleheart_img2{
+    padding: 0em 1em 0em
   }
